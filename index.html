@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sachin Tyagi — SACHINDEV | Developer & Creator</title>
+  <meta name="description" content="Portfolio of Sachin Tyagi (SACHINDEV) — a young developer, Class 12 PCM student exploring Python, cybersecurity, web development, graphic design, and CLI tools.">
+  <meta name="keywords" content="Sachin Tyagi, SACHINDEV, Python Developer, Cybersecurity Learner, CLI Tools, Web Development, Class 12 PCM, Developer Portfolio">
+  <meta name="author" content="Sachin Tyagi">
+  <meta name="theme-color" content="#06080d">
+
+  <!-- Open Graph / Social Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Sachin Tyagi — SACHINDEV | Developer & Creator">
+  <meta property="og:description" content="Building tools, learning systems, and turning ideas into code. Class 12 PCM student exploring Python, cybersecurity, and CLI development.">
+  <meta property="og:image" content="profile.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sachin Tyagi — SACHINDEV">
+  <meta name="twitter:description" content="Developer • Creator • Cybersecurity Learner. Building tools, learning systems, and turning ideas into code.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23080c14'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-size='42' font-weight='bold' fill='%2300f2fe'>&lt;S/&gt;</text></svg>">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-primary text-slate-100 antialiased selection:bg-cyan-500/20 selection:text-cyan-300">
+
+  <!-- Ambient Canvas Background -->
+  <canvas id="bg-canvas" class="fixed inset-0 pointer-events-none z-0"></canvas>
+  <div class="ambient-glow glow-top"></div>
+  <div class="ambient-glow glow-bottom"></div>
+
+  <!-- Sticky Navbar -->
+  <header id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#hero" class="brand-logo group flex items-center gap-3 text-lg font-mono font-bold tracking-wider text-white">
+        <span class="logo-bracket text-cyan-400 transition-transform group-hover:-translate-x-1">&lt;</span>
+        <span class="brand-text bg-gradient-to-r from-white via-slate-100 to-cyan-400 bg-clip-text text-transparent">SACHINDEV</span>
+        <span class="logo-bracket text-cyan-400 transition-transform group-hover:translate-x-1">/&gt;</span>
+        <span class="status-pill hidden sm:inline-flex items-center gap-1.5 text-[11px] font-sans font-normal py-0.5 px-2 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 ml-2">
+          <span class="status-dot animate-pulse"></span> Learning &amp; Building
+        </span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center gap-1 lg:gap-2">
+        <a href="#hero" class="nav-link">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#what-i-build" class="nav-link">What I Build</a>
+        <a href="#journey" class="nav-link">Journey</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#contact" class="nav-link nav-cta">
+          <span>Let's Connect</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+        </a>
+      </nav>
+
+      <!-- Mobile Menu Toggle Button -->
+      <button id="mobile-menu-btn" class="md:hidden flex flex-col justify-center items-center w-10 h-10 rounded-lg bg-surface/80 border border-white/10 text-slate-300 hover:text-white focus:outline-none" aria-label="Toggle navigation menu">
+        <span class="hamburger-line line-1"></span>
+        <span class="hamburger-line line-2"></span>
+        <span class="hamburger-line line-3"></span>
+      </button>
+
+    </div>
+
+    <!-- Mobile Drawer Overlay -->
+    <div id="mobile-menu" class="md:hidden fixed inset-x-0 top-20 bg-primary/95 backdrop-blur-xl border-b border-white/10 px-6 py-8 transition-all duration-300 opacity-0 pointer-events-none -translate-y-4">
+      <div class="flex flex-col gap-4 text-center">
+        <a href="#hero" class="mobile-nav-link">Home</a>
+        <a href="#about" class="mobile-nav-link">About</a>
+        <a href="#skills" class="mobile-nav-link">Skills</a>
+        <a href="#what-i-build" class="mobile-nav-link">What I Build</a>
+        <a href="#journey" class="mobile-nav-link">Journey</a>
+        <a href="#projects" class="mobile-nav-link">Projects</a>
+        <a href="#contact" class="mobile-nav-link mobile-nav-cta">Let's Connect</a>
+      </div>
+      <div class="mt-6 pt-6 border-t border-white/10 flex flex-col items-center gap-2 text-xs font-mono text-slate-400">
+        <span>SACHINDEV // CLASS 12 PCM</span>
+        <span class="text-cyan-400">sachintyagi13933@gail.com</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Wrapper -->
+  <main class="relative z-10">
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="min-h-screen flex items-center pt-28 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center w-full">
+        
+        <!-- Left: Hero Text & CTAs -->
+        <div class="lg:col-span-7 flex flex-col items-start gap-6 hero-text-col">
+          
+          <!-- Identity Badges -->
+          <div class="flex flex-wrap items-center gap-3">
+            <div class="tag-badge">
+              <span class="tag-badge-dot"></span>
+              <span class="font-mono text-xs tracking-wider">SACHINDEV</span>
+            </div>
+            <div class="tag-badge-secondary font-mono text-xs">
+              <span>CLASS 12 PCM STUDENT</span>
+            </div>
+          </div>
+
+          <!-- Main Heading -->
+          <div class="space-y-2">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white font-display leading-tight">
+              Hi, I'm <span class="gradient-text">Sachin.</span>
+            </h1>
+            <p class="text-lg sm:text-xl font-medium text-cyan-400 font-mono tracking-wide">
+              Developer • Creator • Cybersecurity Learner
+            </p>
+          </div>
+
+          <!-- Subtitle / Mission -->
+          <p class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl font-sans">
+            Building tools, learning systems, and turning ideas into code. I am a Class 12 PCM student with an intense curiosity for Python scripting, cybersecurity fundamentals, practical CLI utilities, and modern web interfaces.
+          </p>
+
+          <!-- Core Value Statement / Pill -->
+          <div class="w-full sm:w-auto p-3.5 px-5 rounded-xl bg-surface/90 border border-white/10 backdrop-blur-md flex items-center gap-3 text-xs sm:text-sm text-slate-300 font-mono">
+            <span class="text-cyan-400 font-bold">$</span>
+            <span>motto: <span class="text-white">"Learn → Build → Break → Understand → Improve"</span></span>
+          </div>
+
+          <!-- Hero CTAs -->
+          <div class="flex flex-wrap items-center gap-4 pt-2 w-full sm:w-auto">
+            <a href="#projects" class="btn btn-primary group w-full sm:w-auto text-center justify-center">
+              <span>Explore My Work</span>
+              <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+            </a>
+            <a href="#contact" class="btn btn-secondary group w-full sm:w-auto text-center justify-center">
+              <span>Let's Connect</span>
+              <svg class="w-4 h-4 transition-transform group-hover:rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+            </a>
+          </div>
+
+          <!-- Mini Stats / Highlights -->
+          <div class="grid grid-cols-3 gap-4 pt-4 border-t border-white/10 w-full max-w-lg">
+            <div>
+              <div class="text-2xl font-bold font-mono text-white">12th</div>
+              <div class="text-xs text-slate-400">PCM Stream</div>
+            </div>
+            <div>
+              <div class="text-2xl font-bold font-mono text-cyan-400">CLI &amp; Py</div>
+              <div class="text-xs text-slate-400">Core Focus</div>
+            </div>
+            <div>
+              <div class="text-2xl font-bold font-mono text-violet-400">100%</div>
+              <div class="text-xs text-slate-400">Authentic Code</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right: PFP & Interactive Terminal Showcase -->
+        <div class="lg:col-span-5 flex flex-col items-center gap-6 hero-visual-col">
+          
+          <!-- Profile Card with Cyber Frame & Ambient Aura -->
+          <div class="pfp-container group relative">
+            
+            <!-- Glowing background aura -->
+            <div class="pfp-aura"></div>
+            
+            <!-- Tech corner brackets -->
+            <div class="corner-bracket top-left"></div>
+            <div class="corner-bracket top-right"></div>
+            <div class="corner-bracket bottom-left"></div>
+            <div class="corner-bracket bottom-right"></div>
+            
+            <!-- Glassmorphism Image Frame -->
+            <div class="pfp-frame">
+              <img 
+                src="profile.jpg" 
+                alt="Sachin Tyagi — SACHINDEV" 
+                class="pfp-image" 
+                loading="eager"
+              >
+              <div class="pfp-overlay"></div>
+            </div>
+
+            <!-- Profile Floating Tag -->
+            <div class="pfp-badge">
+              <span class="pfp-badge-dot animate-pulse"></span>
+              <span class="font-mono text-xs font-medium text-slate-200">SACHIN TYAGI // DEV</span>
+            </div>
+          </div>
+
+          <!-- Interactive Developer Terminal -->
+          <div class="terminal-card w-full max-w-md shadow-2xl">
+            <!-- Terminal Header Bar -->
+            <div class="terminal-header">
+              <div class="terminal-controls">
+                <span class="term-btn btn-close"></span>
+                <span class="term-btn btn-min"></span>
+                <span class="term-btn btn-max"></span>
+              </div>
+              <div class="terminal-title font-mono text-xs text-slate-400 flex items-center gap-1.5">
+                <svg class="w-3.5 h-3.5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                sachindev@workstation:~
+              </div>
+              <div class="text-[10px] font-mono text-slate-500">bash</div>
+            </div>
+
+            <!-- Terminal Body with Interactive CLI -->
+            <div id="terminal-body" class="terminal-body font-mono text-xs">
+              <div class="term-output text-slate-400 mb-2 leading-relaxed">
+                <span class="text-cyan-400 font-bold">SACHINDEV OS v1.0.4</span> [System Ready]<br>
+                Type <span class="text-emerald-400 font-bold">'help'</span> to see available commands.
+              </div>
+
+              <!-- Automated intro log -->
+              <div class="term-line"><span class="prompt text-cyan-400">$</span> <span class="command text-white">whoami</span></div>
+              <div class="response text-slate-300 pl-3">sachin tyagi [sachindev] — class 12 pcm</div>
+
+              <div class="term-line"><span class="prompt text-cyan-400">$</span> <span class="command text-white">focus</span></div>
+              <div class="response text-cyan-300 pl-3">python • cybersecurity • web • cli-tools</div>
+
+              <div class="term-line"><span class="prompt text-cyan-400">$</span> <span class="command text-white">status</span></div>
+              <div class="response text-emerald-400 pl-3">learning • building • experimenting</div>
+
+              <!-- Interactive Dynamic Lines Area -->
+              <div id="terminal-interactive-log"></div>
+
+              <!-- Interactive Command Input Prompt -->
+              <form id="terminal-form" class="flex items-center gap-2 mt-2" onsubmit="return false;">
+                <span class="prompt text-cyan-400 font-bold">$</span>
+                <input 
+                  type="text" 
+                  id="terminal-input" 
+                  class="bg-transparent border-none outline-none text-emerald-300 font-mono text-xs flex-1 caret-cyan-400" 
+                  placeholder="type a command (e.g. help, skills, contact)..." 
+                  autocomplete="off" 
+                  spellcheck="false"
+                >
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-white/5">
+      <div class="section-badge font-mono text-xs text-cyan-400 mb-3">// 01. ABOUT ME</div>
+      <h2 class="section-heading text-3xl sm:text-4xl font-bold font-display text-white mb-6">
+        A little about me.
+      </h2>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left: Story & Narrative -->
+        <div class="lg:col-span-7 space-y-6 text-slate-300 leading-relaxed font-sans">
+          <p class="text-lg text-slate-200">
+            I am <strong class="text-white font-semibold">Sachin Tyagi</strong>, a Class 12 PCM (Physics, Chemistry, Mathematics) student who is deeply passionate about computer systems, software development, and modern technologies.
+          </p>
+          
+          <p>
+            Rather than just memorizing theory, I believe in <strong class="text-cyan-300 font-medium">learning by building</strong>. I am currently learning Python and foundational cybersecurity concepts while continuously refining my web development and digital design capabilities.
+          </p>
+
+          <p>
+            I particularly enjoy developing practical <strong class="text-white font-medium">CLI tools and developer utilities</strong>—small, efficient tools designed to solve real problems, automate tedious workflows, and give deeper insight into how systems work under the hood.
+          </p>
+
+          <p class="text-slate-400 text-sm italic">
+            "I'm not pretending to know everything or claiming to be an industry veteran. I am a young developer building his craft one script, one tool, and one experiment at a time."
+          </p>
+
+          <!-- Core Philosophy Ribbon -->
+          <div class="philosophy-box p-6 rounded-2xl bg-surface border border-cyan-500/20 relative overflow-hidden group">
+            <div class="absolute -right-8 -bottom-8 w-32 h-32 bg-cyan-500/10 rounded-full blur-2xl group-hover:bg-cyan-500/20 transition-all"></div>
+            <div class="font-mono text-xs text-cyan-400 tracking-wider mb-2">// CORE PHILOSOPHY</div>
+            <div class="text-lg sm:text-xl font-bold text-white font-display flex flex-wrap items-center gap-2">
+              <span>Learn</span>
+              <span class="text-cyan-400">→</span>
+              <span>Build</span>
+              <span class="text-cyan-400">→</span>
+              <span>Break</span>
+              <span class="text-cyan-400">→</span>
+              <span>Understand</span>
+              <span class="text-cyan-400">→</span>
+              <span class="text-emerald-400">Improve</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right: 3 Core Pillars Cards -->
+        <div class="lg:col-span-5 flex flex-col gap-4">
+          
+          <div class="feature-card">
+            <div class="feature-icon bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+            </div>
+            <div>
+              <h3 class="text-white font-semibold font-display text-base mb-1">Practical CLI &amp; Tools</h3>
+              <p class="text-slate-400 text-sm leading-normal">Focused on writing lightweight command-line interfaces and scripts that automate repetitive tasks.</p>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon bg-violet-500/10 text-violet-400 border border-violet-500/20">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+            </div>
+            <div>
+              <h3 class="text-white font-semibold font-display text-base mb-1">Cybersecurity Fundamentals</h3>
+              <p class="text-slate-400 text-sm leading-normal">Learning Linux commands, networking basics, system architecture, and defensive concepts step-by-step.</p>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon bg-blue-500/10 text-blue-400 border border-blue-500/20">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+            </div>
+            <div>
+              <h3 class="text-white font-semibold font-display text-base mb-1">Class 12 PCM Student</h3>
+              <p class="text-slate-400 text-sm leading-normal">Balancing rigorous science &amp; mathematics studies with daily programming and technical exploration.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- SKILLS MATRIX SECTION -->
+    <section id="skills" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-white/5">
+      <div class="section-badge font-mono text-xs text-cyan-400 mb-3">// 02. SKILLS &amp; CAPABILITIES</div>
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+        <div>
+          <h2 class="section-heading text-3xl sm:text-4xl font-bold font-display text-white">
+            What I'm Working With.
+          </h2>
+          <p class="text-slate-400 text-sm mt-2 max-w-xl">
+            Honest competency indicators based on actual hands-on practice. No fake 99% progress bars.
+          </p>
+        </div>
+        
+        <!-- Legend Indicator -->
+        <div class="flex flex-wrap items-center gap-2 text-xs font-mono text-slate-400 bg-surface/60 p-2.5 px-4 rounded-xl border border-white/5">
+          <span class="text-slate-300 font-semibold">Status tags:</span>
+          <span class="skill-tag tag-comfortable">Comfortable</span>
+          <span class="skill-tag tag-building">Building</span>
+          <span class="skill-tag tag-learning">Learning</span>
+          <span class="skill-tag tag-exploring">Exploring</span>
+        </div>
+      </div>
+
+      <!-- Skills Grid (4 Categories) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- 1. Development -->
+        <div class="skill-category-card">
+          <div class="flex items-center gap-3 mb-6 pb-4 border-b border-white/10">
+            <div class="w-9 h-9 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center border border-cyan-500/20">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+            </div>
+            <h3 class="text-lg font-bold font-display text-white">Development</h3>
+          </div>
+
+          <div class="space-y-4">
+            <div class="skill-item">
+              <span class="skill-name">Python</span>
+              <span class="skill-tag tag-comfortable">Comfortable</span>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">HTML5</span>
+              <span class="skill-tag tag-comfortable">Comfortable</span>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">CSS3</span>
+              <span class="skill-tag tag-comfortable">Comfortable</span>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">JavaScript</span>
+              <span class="skill-tag tag-building">Building</span>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">Web Development</span>
+              <span class="skill-tag tag-building">Building</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Cybersecurity -->
+        <div class="skill-category-card">
+          <div class="flex items-center gap-3 mb-6 pb-4 border-b border-white/10">
+            <div class="w-9 h-9 rounded-lg bg-violet-500/10 text-violet-400 flex items-center justify-center border border-violet-500/20">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+            </div>
+            <h3 class="text-lg font-bold font-display text-white">Cybersecurity</h3>
+          </div>
+
+          <div class="space-y-4">
+            <div class="skill-item">
+              <span class="skill-name">Security Fundamentals</span>
+              <span class="skill-tag tag-learning">Learning</span>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">Linux / Bash CLI</span>
+              <span class="skill-tag tag-exploring">Exploring</span>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">Security Concepts</span>
+              <span class="skill-tag tag-learning">Learning</span>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">Network Protocols</span>
+              <span class="skill-tag tag-exploring">Exploring</span>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">Defensive Basics</span>
+              <span class="skill-tag tag-learning">Learning</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Creative & Design -->
+        <div class="skill-category-card">
+          <div class="flex items-center gap-3 mb-6 pb-4 border-b border-white/10">
+            <div class="w-9 h-9 rounded-lg bg-pink-500/10 text-pink-400 flex items-center justify-center border border-pink-500/20">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path></svg>
+            </div>
+            <h3 class="text-lg font-bold font-display text-white">Creative Design</h3>
+          </div>
+
+          <div class="space-y-4">
+            <div class="skill-item">
+              <span class="skill-name">Graphic Design</span>
+              <span class="skill-tag tag-comfortable">Comfortable</span>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">UI / UX Design</span>
+              <span class="skill-tag tag-building">Building</span>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">Visual Design</span>
+              <span class="skill-tag tag-comfortable">Comfortable</span>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">Typography &amp; Layout</span>
+              <span class="skill-tag tag-growing">Growing</span>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">Digital Branding</span>
+              <span class="skill-tag tag-growing">Growing</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Tools & Automation -->
+        <div class="skill-category-card">
+          <div class="flex items-center gap-3 mb-6 pb-4 border-b border-white/10">
+            <div class="w-9 h-9 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center border border-emerald-500/20">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+            </div>
+            <h3 class="text-lg font-bold font-display text-white">Tools &amp; Workflow</h3>
+          </div>
+
+          <div class="space-y-4">
+            <div class="skill-item">
+              <span class="skill-name">CLI Tools</span>
+              <span class="skill-tag tag-building">Building</span>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">Developer Utilities</span>
+              <span class="skill-tag tag-building">Building</span>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">Automation Scripts</span>
+              <span class="skill-tag tag-exploring">Exploring</span>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">Git &amp; GitHub</span>
+              <span class="skill-tag tag-comfortable">Comfortable</span>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">VS Code / Terminal</span>
+              <span class="skill-tag tag-comfortable">Comfortable</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- WHAT I BUILD SECTION -->
+    <section id="what-i-build" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-white/5">
+      <div class="section-badge font-mono text-xs text-cyan-400 mb-3">// 03. WHAT I BUILD</div>
+      <h2 class="section-heading text-3xl sm:text-4xl font-bold font-display text-white mb-4">
+        Areas of Exploration.
+      </h2>
+      <p class="text-slate-400 text-base max-w-2xl mb-12">
+        My core interests and the types of practical projects, utilities, and experiments I love creating.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- 1. CLI Tools -->
+        <div class="build-card group">
+          <div class="build-card-header">
+            <div class="build-icon bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+            </div>
+            <span class="font-mono text-xs text-slate-500">01 // CORE PASSION</span>
+          </div>
+          <h3 class="text-xl font-bold font-display text-white group-hover:text-cyan-400 transition-colors mb-2">CLI Tools</h3>
+          <p class="text-slate-300 text-sm leading-relaxed mb-6">
+            Small, fast, and practical command-line utilities designed to solve day-to-day problems and streamline terminal workflows.
+          </p>
+          <div class="flex flex-wrap gap-1.5 mt-auto">
+            <span class="mini-tag">Python</span>
+            <span class="mini-tag">Argparse</span>
+            <span class="mini-tag">Rich CLI</span>
+            <span class="mini-tag">Terminal</span>
+          </div>
+        </div>
+
+        <!-- 2. Web Projects -->
+        <div class="build-card group">
+          <div class="build-card-header">
+            <div class="build-icon bg-blue-500/10 text-blue-400 border border-blue-500/20">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+            </div>
+            <span class="font-mono text-xs text-slate-500">02 // FRONTEND</span>
+          </div>
+          <h3 class="text-xl font-bold font-display text-white group-hover:text-blue-400 transition-colors mb-2">Web Projects</h3>
+          <p class="text-slate-300 text-sm leading-relaxed mb-6">
+            Modern, responsive web experiences and interactive interfaces built while learning modern frontend architecture and design principles.
+          </p>
+          <div class="flex flex-wrap gap-1.5 mt-auto">
+            <span class="mini-tag">HTML5</span>
+            <span class="mini-tag">CSS3 / Glass</span>
+            <span class="mini-tag">JavaScript</span>
+            <span class="mini-tag">UI / UX</span>
+          </div>
+        </div>
+
+        <!-- 3. Developer Utilities -->
+        <div class="build-card group">
+          <div class="build-card-header">
+            <div class="build-icon bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+            </div>
+            <span class="font-mono text-xs text-slate-500">03 // AUTOMATION</span>
+          </div>
+          <h3 class="text-xl font-bold font-display text-white group-hover:text-emerald-400 transition-colors mb-2">Developer Utilities</h3>
+          <p class="text-slate-300 text-sm leading-relaxed mb-6">
+            Tools and scripts that automate repetitive tasks, manage file conversions, format text, and enhance developer productivity.
+          </p>
+          <div class="flex flex-wrap gap-1.5 mt-auto">
+            <span class="mini-tag">Automation</span>
+            <span class="mini-tag">File Handlers</span>
+            <span class="mini-tag">Productivity</span>
+            <span class="mini-tag">Scripts</span>
+          </div>
+        </div>
+
+        <!-- 4. Creative Projects -->
+        <div class="build-card group">
+          <div class="build-card-header">
+            <div class="build-icon bg-pink-500/10 text-pink-400 border border-pink-500/20">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+            </div>
+            <span class="font-mono text-xs text-slate-500">04 // CREATIVE</span>
+          </div>
+          <h3 class="text-xl font-bold font-display text-white group-hover:text-pink-400 transition-colors mb-2">Creative Projects</h3>
+          <p class="text-slate-300 text-sm leading-relaxed mb-6">
+            Graphics, brand layouts, digital artwork, and creative interface experiments fusing technical logic with aesthetics.
+          </p>
+          <div class="flex flex-wrap gap-1.5 mt-auto">
+            <span class="mini-tag">Graphic Design</span>
+            <span class="mini-tag">Branding</span>
+            <span class="mini-tag">Visuals</span>
+            <span class="mini-tag">Aesthetics</span>
+          </div>
+        </div>
+
+        <!-- 5. Security Experiments -->
+        <div class="build-card group md:col-span-2 lg:col-span-2">
+          <div class="build-card-header">
+            <div class="build-icon bg-violet-500/10 text-violet-400 border border-violet-500/20">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+            </div>
+            <span class="font-mono text-xs text-slate-500">05 // CYBER EXPLORATION</span>
+          </div>
+          <h3 class="text-xl font-bold font-display text-white group-hover:text-violet-400 transition-colors mb-2">Security Experiments</h3>
+          <p class="text-slate-300 text-sm leading-relaxed mb-6">
+            Learning-oriented cybersecurity experiments, understanding TCP/IP packets, Linux permissions, hash validation, and defensive security basics. (Educational learning labs).
+          </p>
+          <div class="flex flex-wrap gap-1.5 mt-auto">
+            <span class="mini-tag">Linux</span>
+            <span class="mini-tag">Networking</span>
+            <span class="mini-tag">Security Labs</span>
+            <span class="mini-tag">Educational</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- LEARNING JOURNEY TIMELINE -->
+    <section id="journey" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-white/5">
+      <div class="section-badge font-mono text-xs text-cyan-400 mb-3">// 04. LEARNING TIMELINE</div>
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
+        <div>
+          <h2 class="section-heading text-3xl sm:text-4xl font-bold font-display text-white">
+            The Learning Journey.
+          </h2>
+          <p class="text-slate-400 text-base mt-2">
+            A roadmap of continuous curiosity, trial, error, and growth.
+          </p>
+        </div>
+        <div class="inline-flex items-center gap-2 font-mono text-xs text-cyan-400 bg-cyan-500/10 border border-cyan-500/20 py-2 px-4 rounded-full">
+          <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+          Currently learning. Constantly building.
+        </div>
+      </div>
+
+      <!-- Timeline Vertical Container -->
+      <div class="relative timeline-wrapper pl-6 md:pl-8 border-l border-white/10 space-y-12 max-w-3xl mx-auto">
+        
+        <!-- Timeline Item 1 -->
+        <div class="timeline-item relative group">
+          <div class="timeline-node"></div>
+          <div class="timeline-content">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="font-mono text-xs text-cyan-400 font-semibold">STAGE 01</span>
+              <span class="text-slate-500">•</span>
+              <span class="text-xs text-slate-400 font-mono">Academic Foundation</span>
+            </div>
+            <h3 class="text-xl font-bold font-display text-white mb-2">Class 12 PCM Student</h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Developing strong analytical thinking, mathematical problem-solving, and scientific inquiry through Physics, Chemistry, and Mathematics.
+            </p>
+          </div>
+        </div>
+
+        <!-- Timeline Item 2 -->
+        <div class="timeline-item relative group">
+          <div class="timeline-node"></div>
+          <div class="timeline-content">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="font-mono text-xs text-cyan-400 font-semibold">STAGE 02</span>
+              <span class="text-slate-500">•</span>
+              <span class="text-xs text-slate-400 font-mono">First Steps</span>
+            </div>
+            <h3 class="text-xl font-bold font-display text-white mb-2">Learning Programming</h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Stepping into computer science fundamentals, algorithm thinking, variables, data structures, and conditional logic.
+            </p>
+          </div>
+        </div>
+
+        <!-- Timeline Item 3 -->
+        <div class="timeline-item relative group">
+          <div class="timeline-node"></div>
+          <div class="timeline-content">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="font-mono text-xs text-cyan-400 font-semibold">STAGE 03</span>
+              <span class="text-slate-500">•</span>
+              <span class="text-xs text-slate-400 font-mono">Core Language</span>
+            </div>
+            <h3 class="text-xl font-bold font-display text-white mb-2">Exploring Python</h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Diving deeply into Python for scripting, file automation, terminal applications, and data handling.
+            </p>
+          </div>
+        </div>
+
+        <!-- Timeline Item 4 -->
+        <div class="timeline-item relative group">
+          <div class="timeline-node"></div>
+          <div class="timeline-content">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="font-mono text-xs text-cyan-400 font-semibold">STAGE 04</span>
+              <span class="text-slate-500">•</span>
+              <span class="text-xs text-slate-400 font-mono">Visual Interfaces</span>
+            </div>
+            <h3 class="text-xl font-bold font-display text-white mb-2">Building Web Projects</h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Combining HTML5, CSS3, JavaScript, and graphic design instincts to create engaging and responsive user experiences.
+            </p>
+          </div>
+        </div>
+
+        <!-- Timeline Item 5 -->
+        <div class="timeline-item relative group">
+          <div class="timeline-node"></div>
+          <div class="timeline-content">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="font-mono text-xs text-cyan-400 font-semibold">STAGE 05</span>
+              <span class="text-slate-500">•</span>
+              <span class="text-xs text-slate-400 font-mono">Systems &amp; Security</span>
+            </div>
+            <h3 class="text-xl font-bold font-display text-white mb-2">Exploring Cybersecurity</h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Learning Linux navigation, network architecture, defensive security concepts, and how systems interact safely.
+            </p>
+          </div>
+        </div>
+
+        <!-- Timeline Item 6 -->
+        <div class="timeline-item relative group">
+          <div class="timeline-node"></div>
+          <div class="timeline-content">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="font-mono text-xs text-cyan-400 font-semibold">STAGE 06</span>
+              <span class="text-slate-500">•</span>
+              <span class="text-xs text-slate-400 font-mono">Hands-on Tooling</span>
+            </div>
+            <h3 class="text-xl font-bold font-display text-white mb-2">Building CLI Tools</h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Writing terminal-native utilities that solve real-life dev problems, automating tasks with clean argument parsers and formatted outputs.
+            </p>
+          </div>
+        </div>
+
+        <!-- Timeline Item 7 (Active State) -->
+        <div class="timeline-item relative group">
+          <div class="timeline-node active-node"></div>
+          <div class="timeline-content border-cyan-500/30 bg-surface/90">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="font-mono text-xs text-emerald-400 font-semibold">ACTIVE STAGE</span>
+              <span class="text-slate-500">•</span>
+              <span class="text-xs text-slate-400 font-mono">Present &amp; Beyond</span>
+            </div>
+            <h3 class="text-xl font-bold font-display text-white mb-2">Becoming a Better Developer</h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Every day is a step forward. Continuously experimenting, refining code quality, reading documentation, and building useful tools.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- PROJECTS SHOWCASE SECTION -->
+    <section id="projects" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-white/5">
+      <div class="section-badge font-mono text-xs text-cyan-400 mb-3">// 05. PROJECTS &amp; WORK</div>
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+        <div>
+          <h2 class="section-heading text-3xl sm:text-4xl font-bold font-display text-white">
+            Featured Projects &amp; Labs.
+          </h2>
+          <p class="text-slate-400 text-sm mt-2 max-w-xl">
+            Modular showcase cards prepared for upcoming project releases. Easy to customize with direct GitHub and live links.
+          </p>
+        </div>
+        <div class="text-xs font-mono text-slate-400 bg-surface/50 p-2.5 px-4 rounded-xl border border-white/5">
+          <span class="text-cyan-400 font-bold">$</span> repo-status: <span class="text-slate-300">active development</span>
+        </div>
+      </div>
+
+      <!-- Project Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Project 01 -->
+        <div class="project-card">
+          <div class="project-card-header">
+            <div class="flex items-center justify-between w-full mb-3">
+              <span class="font-mono text-xs text-cyan-400">PROJECT // 01</span>
+              <span class="project-status-badge status-coming-soon">Coming Soon</span>
+            </div>
+            <h3 class="text-xl font-bold font-display text-white group-hover:text-cyan-400 transition-colors">
+              CLI Automation Suite
+            </h3>
+          </div>
+          
+          <div class="project-body">
+            <p class="text-slate-300 text-sm leading-relaxed mb-6">
+              A collection of lightweight command-line utilities for developers, handling batch file operations, format conversions, and terminal diagnostics.
+            </p>
+            
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="mini-tag">Python</span>
+              <span class="mini-tag">CLI</span>
+              <span class="mini-tag">Argparse</span>
+              <span class="mini-tag">Utility</span>
+            </div>
+          </div>
+
+          <div class="project-footer">
+            <a href="#contact" class="project-btn" title="Project in development - contact to learn more">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+              <span>GitHub (Coming Soon)</span>
+            </a>
+            <a href="#contact" class="project-btn" title="Live demo preview soon">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              <span>Preview</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 02 -->
+        <div class="project-card">
+          <div class="project-card-header">
+            <div class="flex items-center justify-between w-full mb-3">
+              <span class="font-mono text-xs text-blue-400">PROJECT // 02</span>
+              <span class="project-status-badge status-in-dev">In Development</span>
+            </div>
+            <h3 class="text-xl font-bold font-display text-white group-hover:text-blue-400 transition-colors">
+              Dev Utilities Hub
+            </h3>
+          </div>
+          
+          <div class="project-body">
+            <p class="text-slate-300 text-sm leading-relaxed mb-6">
+              A minimalist web toolkit featuring regex testers, JSON beautifiers, quick hash generators, and essential utilities for young coders.
+            </p>
+            
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="mini-tag">JavaScript</span>
+              <span class="mini-tag">CSS3</span>
+              <span class="mini-tag">HTML5</span>
+              <span class="mini-tag">DevTools</span>
+            </div>
+          </div>
+
+          <div class="project-footer">
+            <a href="#contact" class="project-btn" title="Project repository in progress">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+              <span>GitHub (In Dev)</span>
+            </a>
+            <a href="#contact" class="project-btn" title="Live demo in staging">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              <span>Preview</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 03 -->
+        <div class="project-card">
+          <div class="project-card-header">
+            <div class="flex items-center justify-between w-full mb-3">
+              <span class="font-mono text-xs text-violet-400">PROJECT // 03</span>
+              <span class="project-status-badge status-experimental">Experimental</span>
+            </div>
+            <h3 class="text-xl font-bold font-display text-white group-hover:text-violet-400 transition-colors">
+              Security Labs &amp; Scripts
+            </h3>
+          </div>
+          
+          <div class="project-body">
+            <p class="text-slate-300 text-sm leading-relaxed mb-6">
+              Educational scripts and experiments analyzing network packets, verifying cryptographic checksums, and exploring defensive security concepts.
+            </p>
+            
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="mini-tag">Python</span>
+              <span class="mini-tag">Networking</span>
+              <span class="mini-tag">Security</span>
+              <span class="mini-tag">Linux</span>
+            </div>
+          </div>
+
+          <div class="project-footer">
+            <a href="#contact" class="project-btn" title="Experimental project scripts">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+              <span>GitHub (Labs)</span>
+            </a>
+            <a href="#contact" class="project-btn" title="Interactive lab notes">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              <span>Preview</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-white/5">
+      <div class="contact-box p-8 sm:p-12 md:p-16 rounded-3xl bg-gradient-to-b from-surface to-surface/40 border border-white/10 relative overflow-hidden text-center max-w-4xl mx-auto">
+        
+        <!-- Ambient light orbs -->
+        <div class="absolute -top-24 -left-24 w-64 h-64 bg-cyan-500/15 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-24 -right-24 w-64 h-64 bg-violet-500/15 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="section-badge font-mono text-xs text-cyan-400 mb-4 inline-block">// 06. CONTACT</div>
+        
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold font-display text-white mb-4">
+          Let's build something.
+        </h2>
+        
+        <p class="text-slate-300 text-base sm:text-lg max-w-xl mx-auto mb-10 leading-relaxed">
+          Have an idea, project, collaboration, or something interesting to build? Reach out directly.
+        </p>
+
+        <!-- Direct Contact Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto mb-10">
+          
+          <!-- Email Card -->
+          <div class="contact-card group">
+            <div class="contact-icon bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+            </div>
+            <div class="text-left flex-1 min-w-0">
+              <div class="text-xs font-mono text-slate-400">EMAIL ADDRESS</div>
+              <div class="text-sm font-mono font-medium text-white truncate group-hover:text-cyan-400 transition-colors">sachintyagi13933@gail.com</div>
+            </div>
+            <div class="flex gap-2">
+              <a href="mailto:sachintyagi13933@gail.com" class="contact-action-btn" title="Send Email">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+              </a>
+              <button onclick="copyToClipboard('sachintyagi13933@gail.com', 'Email copied!')" class="contact-action-btn" title="Copy Email">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Phone Card -->
+          <div class="contact-card group">
+            <div class="contact-icon bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+            </div>
+            <div class="text-left flex-1 min-w-0">
+              <div class="text-xs font-mono text-slate-400">DIRECT PHONE</div>
+              <div class="text-sm font-mono font-medium text-white truncate group-hover:text-emerald-400 transition-colors">+91 6372750569</div>
+            </div>
+            <div class="flex gap-2">
+              <a href="tel:6372750569" class="contact-action-btn" title="Call Now">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+              </a>
+              <button onclick="copyToClipboard('6372750569', 'Phone number copied!')" class="contact-action-btn" title="Copy Number">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Primary CTA Button Group -->
+        <div class="flex flex-wrap items-center justify-center gap-4">
+          <a href="mailto:sachintyagi13933@gail.com" class="btn btn-primary">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+            <span>Email Me</span>
+          </a>
+          <a href="tel:6372750569" class="btn btn-secondary">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+            <span>Call Me</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/10 bg-primary/95 py-12 px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+      
+      <!-- Brand & Tagline -->
+      <div class="flex flex-col items-center md:items-start gap-1 text-center md:text-left">
+        <a href="#hero" class="brand-logo text-base font-mono font-bold tracking-wider text-white">
+          <span class="text-cyan-400">&lt;</span> SACHINDEV <span class="text-cyan-400">/&gt;</span>
+        </a>
+        <p class="text-xs text-slate-400 font-mono">
+          Learning. Building. Experimenting.
+        </p>
+      </div>
+
+      <!-- Center Status / Stream -->
+      <div class="text-xs font-mono text-slate-500 text-center">
+        <span>Sachin Tyagi // Class 12 PCM</span>
+      </div>
+
+      <!-- Copyright & Back to top -->
+      <div class="flex items-center gap-4 text-xs text-slate-400 font-mono">
+        <span>&copy; 2026 Sachin Tyagi. All rights reserved.</span>
+        <a href="#hero" class="p-2 rounded-lg bg-surface hover:bg-white/10 border border-white/5 text-slate-300 hover:text-white transition-colors" title="Back to top" aria-label="Back to top">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+        </a>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Toast Notification Container -->
+  <div id="toast" class="toast-notification"></div>
+
+  <!-- JavaScript -->
+  <script src="js.js"></script>
+</body>
+</html>
